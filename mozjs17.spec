@@ -27,7 +27,7 @@ with only mild differences from the published standard.
 %package -n %{libname}
 Summary:	JavaScript engine library
 Group:		System/Libraries
-Obsoletes:	%{_lib}mozjs-17 < 17.0.0-5
+Obsoletes:	%{_lib}mozjs-17 < 17.0.0-1
 
 %description -n %{libname}
 JavaScript is the Netscape-developed object scripting languages. This
@@ -40,7 +40,7 @@ Summary:	The header files for %{name}
 Group:		Development/Other
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}-%{release}
-Obsoletes:	%{_lib}mozjs-17-devel < 17.0.0-5
+Obsoletes:	%{_lib}mozjs-17-devel < 17.0.0-1
 
 %description -n %{libdev}
 This package contains the header files, static libraries and development
