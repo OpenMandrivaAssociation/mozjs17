@@ -6,7 +6,7 @@
 Summary:	JavaScript interpreter and libraries
 Name:		mozjs17
 Version:	17.0.0
-Release:	1
+Release:	2
 License:	GPLv2+ or LGPLv2+ or MPLv1.1
 Group:		Development/Other
 URL:		http://www.mozilla.org/js/
@@ -39,6 +39,13 @@ and sources.
 Summary:	The header files for %{name}
 Group:		Development/Other
 Provides:	%{name}-devel = %{version}-%{release}
+# Necessary because mozjs uses a weird versioning scheme instead of
+# proper sonames
+%if "%{_lib}" == "lib64"
+Provides:	devel(libmozjs-17.0(64bit))
+%else
+Provides:	devel(libmozjs-17.0)
+%endif
 Requires:	%{libname} = %{version}-%{release}
 Obsoletes:	%{_lib}mozjs-17-devel < 17.0.0-1
 
