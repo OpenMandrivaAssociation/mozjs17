@@ -12,7 +12,14 @@ Group:		Development/Other
 URL:		http://www.mozilla.org/js/
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/js/mozjs%{version}.tar.gz
 # From fedora
-Patch0:		js17-build-fixes.patch
+Patch0:         js17-build-fixes.patch
+# makes mozjs to match js from xul 21
+Patch1:         js17-jsval.patch
+Patch2:         mozbug746112-no-decommit-on-large-pages.patch
+Patch3:         mozjs17-0001-Add-AArch64-support.patch
+Patch5:         0001-Move-JS_BYTES_PER_WORD-out-of-config.h.patch
+Patch6:         aarch64-64k-page.patch
+
 BuildRequires:	pkgconfig(nspr)
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	readline-devel
@@ -69,7 +76,8 @@ pushd js/src
 popd
 
 %build
-%configure2_5x --disable-static --with-system-nspr --enable-threadsafe --enable-readline
+export CC=gcc
+%configure --disable-static --with-system-nspr --enable-threadsafe --enable-readline
 %make
 
 %check
