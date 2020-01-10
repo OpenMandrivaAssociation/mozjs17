@@ -63,7 +63,7 @@ you will need to install %{name}-devel.
 
 %prep
 %setup -q -n mozjs%{version}
-%apply_patches
+%autopatch -p1
 
 # Delete bundled sources
 rm -rf js/src/editline
