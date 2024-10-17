@@ -9,7 +9,7 @@ Version:	17.0.0
 Release:	9
 License:	GPLv2+ or LGPLv2+ or MPLv1.1
 Group:		Development/Other
-URL:		http://www.mozilla.org/js/
+URL:		https://www.mozilla.org/js/
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/js/mozjs%{version}.tar.gz
 # From fedora
 Patch0:         js17-build-fixes.patch
