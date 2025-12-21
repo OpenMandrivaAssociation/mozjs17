@@ -20,6 +20,10 @@ Patch3:         mozjs17-0001-Add-AArch64-support.patch
 Patch5:         0001-Move-JS_BYTES_PER_WORD-out-of-config.h.patch
 Patch6:         aarch64-64k-page.patch
 
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(nspr)
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	readline-devel
